@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app:
+    container_name: containerize_app_1
+    build: ./app
+    entrypoint:
+      - flask
+      - run
+      - --host=0.0.0.0
+      - -p 8000
+    environment:
+      FLASK_DEBUG: 1
+      FLASK_ENV: development
+      FLASK_APP: /server/server.py
+    ports: ['8000:8000']
+    volumes: ['./app/src:/server']
+  nginx:
+    container_name: containerize_nginx_1
+    build: ./nginx
+    ports:
+      - '443:443'
+      - '80:80'
