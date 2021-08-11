@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# A validation script for the Containerize homework.
-# Run this script with no args to validate the current directory
-# or optionally supply a homework directory as the first arg:
-# ./validate.sh ~/dev/containerize
 
 test_http() {
   # Check that status is 200 OK
@@ -113,7 +109,7 @@ fi
 echo "------------------------------------------------------------------------"
 echo "| Testing HTTP header and body content...                              |"
 echo "------------------------------------------------------------------------"
-test_http
+#test_http
 echo "------------------------------------------------------------------------"
 echo "| Testing hot reload for local development...                          |"
 echo "------------------------------------------------------------------------"
